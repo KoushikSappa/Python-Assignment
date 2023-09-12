@@ -1,0 +1,30 @@
+# Import the Selenium WebDriver
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+# Create a WebDriver instance (you need to install the appropriate WebDriver for your browser)
+driver = webdriver.Chrome(executable_path="path_to_chromedriver")
+
+# Navigate to the login page of the sample web application
+driver.get("https://sampleapp.com/login")
+
+# Locate the username and password input fields by their HTML attributes (e.g., name, id, or XPath)
+username_input = driver.find_element_by_id("username")  # Replace with the actual HTML attribute
+password_input = driver.find_element_by_id("password")  # Replace with the actual HTML attribute
+
+# Input your login credentials
+username_input.send_keys("your_username")
+password_input.send_keys("your_password")
+
+# Locate and click the login button
+login_button = driver.find_element_by_xpath("//button[@id='loginButton']")  # Replace with the actual XPath
+login_button.click()
+
+# Wait for the login process to complete (you may need to add explicit waits for elements to appear)
+# For example, you can use WebDriverWait to wait for a specific element to be visible.
+
+# Assertions or verifications can be added here to ensure the login was successful
+# For example, you can check for the presence of a welcome message or a dashboard element
+
+# Close the browser when done
+driver.quit()
